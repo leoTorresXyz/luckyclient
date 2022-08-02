@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.luckyowee.luckyclient.entities.Client;
+import com.luckyowee.luckyclient.dto.ClientDTO;
 import com.luckyowee.luckyclient.services.ClientService;
 
 @RestController
@@ -21,8 +21,8 @@ public class ClientResource {
 	
 	//chamada do metodo findAll do ClientService
 	@GetMapping
-	public ResponseEntity<List<Client>> findAll() {
-		List<Client> list = service.findAll();
+	public ResponseEntity<List<ClientDTO>> findAll() {
+		List<ClientDTO> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 }
